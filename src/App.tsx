@@ -1,4 +1,5 @@
-import React, { SyntheticEvent, useEffect, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import './App.css';
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
       const getDefinition = async () => {
         const definition = await getSuggestions(selectedWord);
         definition !== undefined
-          ? console.log(definition)
-          : console.log('no definition found');
+          ? toast(definition)
+          : toast('no definition found');
       };
       getDefinition();
     }
@@ -45,7 +46,7 @@ function App() {
   return (
     <div className='App'>
       <p>
-        Start writing. You'll get suggestions for words when you highlight one.
+        start writing. you'll get suggestions for words when you highlight one.
       </p>
       <textarea
         onChange={(e) => {
@@ -54,6 +55,10 @@ function App() {
         }}
         onSelect={getSelectedText}
       ></textarea>
+      <Toaster
+        position='bottom-center'
+        toastOptions={{ style: { background: 'black', color: '#eee' } }}
+      />
     </div>
   );
 }
