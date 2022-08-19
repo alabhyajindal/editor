@@ -21,8 +21,11 @@ function App() {
   const getSelectedText = (
     e: SyntheticEvent<HTMLTextAreaElement, Event>
   ): void => {
+    /**@ts-ignore */
     const startPosition = e.target.selectionStart;
+    /**@ts-ignore */
     const endPosition = e.target.selectionEnd;
+    /**@ts-ignore */
     const selection = e.target.value.substring(startPosition, endPosition);
     setSelectedWord(selection.trim());
     setIsWordSelected(true);
