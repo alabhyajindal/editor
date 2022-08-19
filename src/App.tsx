@@ -13,11 +13,11 @@ function App() {
   const getSelectedText = (
     e: SyntheticEvent<HTMLTextAreaElement, Event>
   ): void => {
-    const startPosition = e.target.selectionStart;
-    const endPosition = e.target.selectionEnd;
-    const selection = e.target.value.substring(startPosition, endPosition);
-    setSelectedWord(selection.trim());
-    setIsWordSelected(true);
+    // const startPosition = e.target.selectionStart;
+    // const endPosition = e.target.selectionEnd;
+    // const selection = e.target.value.substring(startPosition, endPosition);
+    // setSelectedWord(selection.trim());
+    // setIsWordSelected(true);
   };
 
   const getSuggestions = (): void => {};
